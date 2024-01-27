@@ -53,37 +53,41 @@
                                     id="health-breakfast-img" accept="image/*">
                                 <label class="input-group-text" for="health-breakfast-img">Upload</label>
                             </div>
+                            <img id="health-breakfast-img-display" width="300" alt="">
                         </div>
                         <div class="mb-3">
                             <label for="health-lunch" class="form-label"><span class="text-danger">*</span>午餐</label>
-                            <input type="text" class="form-control" name="health-lunch" id="health-lunch"
+                            <input type="text" class="form-control mb-2" name="health-lunch" id="health-lunch"
                                 placeholder="午餐" required>
                             <div class="input-group mb-3">
                                 <input type="file" class="form-control" name="health-lunch-img" id="health-lunch-img"
                                     accept="image/*">
                                 <label class="input-group-text" for="health-lunch-img">Upload</label>
                             </div>
+                            <img id="health-lunch-img-display" width="300" alt="">
                         </div>
                         <div class="mb-3">
                             <label for="health-dinner" class="form-label"><span class="text-danger">*</span>晚餐</label>
-                            <input type="text" class="form-control" name="health-dinner" id="health-dinner"
+                            <input type="text" class="form-control mb-2" name="health-dinner" id="health-dinner"
                                 placeholder="晚餐" required>
                             <div class="input-group mb-3">
                                 <input type="file" class="form-control" name="health-dinner-img" id="health-dinner-img"
                                     accept="image/*">
                                 <label class="input-group-text" for="health-dinner-img">Upload</label>
                             </div>
+                            <img id="health-dinner-img-display" width="300" alt="">
                         </div>
                         <div class="mb-3">
                             <label for="health-bedtime-snacks" class="form-label"><span
                                     class="text-danger">*</span>宵夜</label>
-                            <input type="text" class="form-control" name="health-bedtime-snacks"
+                            <input type="text" class="form-control mb-2" name="health-bedtime-snacks"
                                 id="health-bedtime-snacks" placeholder="宵夜" required>
                             <div class="input-group mb-3">
                                 <input type="file" class="form-control" name="health-bedtime-snacks-img" id="health-bedtime-snacks-img"
                                     accept="image/*">
                                 <label class="input-group-text" for="health-bedtime-snacks-img">Upload</label>
                             </div>
+                            <img id="health-bedtime-snacks-img-display" width="300" alt="">
                         </div>
                         <div class="mb-3">
                             <label for="health-snacks" class="form-label"><span class="text-danger">*</span>零食</label>
@@ -148,3 +152,47 @@
         </div>
     </div>
 @endsection
+@push('js')
+
+    <script>
+        $(function() {
+            $('#health-date').val('{{ \Carbon\Carbon::now()->format('Y-m-d') }}');
+            $('#health-breakfast-img-display').prop('display', 'none');
+            $('#health-lunch-img-display').prop('display', 'none');
+            $('#health-dinner-img-display').prop('display', 'none');
+            $('#health-bedtime-snacks-img-display').prop('display', 'none');
+            $('#health-breakfast-img').on('change', function() {
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    $('#health-breakfast-img-display').prop('src', e.target.result);
+                    $('#health-breakfast-img-display').prop('display', 'block');
+                }
+                reader.readAsDataURL(this.files[0]);
+            })
+            $('#health-lunch-img').on('change', function() {
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    $('#health-lunch-img-display').prop('src', e.target.result);
+                    $('#health-lunch-img-display').prop('display', 'block');
+                }
+                reader.readAsDataURL(this.files[0]);
+            })
+            $('#health-dinner-img').on('change', function() {
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    $('#health-dinner-img-display').prop('src', e.target.result);
+                    $('#health-dinner-img-display').prop('display', 'block');
+                }
+                reader.readAsDataURL(this.files[0]);
+            })
+            $('#health-bedtime-snacks-img').on('change', function() {
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    $('#health-bedtime-snacks-img-display').prop('src', e.target.result);
+                    $('#health-bedtime-snacks-img-display').prop('display', 'block');
+                }
+                reader.readAsDataURL(this.files[0]);
+            })
+        })
+    </script>
+@endpush

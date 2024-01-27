@@ -50,7 +50,7 @@
                         <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ route('index') }}">Records</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('health-records/reports*') ? 'active' : '' }}" href="{{ route('health-records.reports') }}">Report</a>
+                        <a class="nav-link {{ Request::is('health-records/reports*') ? 'active' : '' }}" href="{{ route('health-records.reports') }}">Reports</a>
                     </li>
                 </ul>
             </div>

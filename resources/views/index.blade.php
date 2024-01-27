@@ -53,7 +53,7 @@
                                     id="health-breakfast-img" accept="image/*">
                                 <label class="input-group-text" for="health-breakfast-img">Upload</label>
                             </div>
-                            <img id="health-breakfast-img-display" width="300" alt="">
+                            <img id="health-breakfast-img-display" class="img-thumbnail" width="300" alt="">
                         </div>
                         <div class="mb-3">
                             <label for="health-lunch" class="form-label"><span class="text-danger">*</span>午餐</label>
@@ -64,7 +64,7 @@
                                     accept="image/*">
                                 <label class="input-group-text" for="health-lunch-img">Upload</label>
                             </div>
-                            <img id="health-lunch-img-display" width="300" alt="">
+                            <img id="health-lunch-img-display" width="300" class="img-thumbnail" alt="">
                         </div>
                         <div class="mb-3">
                             <label for="health-dinner" class="form-label"><span class="text-danger">*</span>晚餐</label>
@@ -75,7 +75,7 @@
                                     accept="image/*">
                                 <label class="input-group-text" for="health-dinner-img">Upload</label>
                             </div>
-                            <img id="health-dinner-img-display" width="300" alt="">
+                            <img id="health-dinner-img-display" width="300" class="img-thumbnail" alt="">
                         </div>
                         <div class="mb-3">
                             <label for="health-bedtime-snacks" class="form-label"><span
@@ -87,7 +87,7 @@
                                     accept="image/*">
                                 <label class="input-group-text" for="health-bedtime-snacks-img">Upload</label>
                             </div>
-                            <img id="health-bedtime-snacks-img-display" width="300" alt="">
+                            <img id="health-bedtime-snacks-img-display" class="img-thumbnail" width="300" alt="">
                         </div>
                         <div class="mb-3">
                             <label for="health-snacks" class="form-label"><span class="text-danger">*</span>零食</label>
@@ -157,15 +157,15 @@
     <script>
         $(function() {
             $('#health-date').val('{{ \Carbon\Carbon::now()->format('Y-m-d') }}');
-            $('#health-breakfast-img-display').prop('display', 'none');
-            $('#health-lunch-img-display').prop('display', 'none');
-            $('#health-dinner-img-display').prop('display', 'none');
-            $('#health-bedtime-snacks-img-display').prop('display', 'none');
+            $('#health-breakfast-img-display').hide();
+            $('#health-lunch-img-display').hide();
+            $('#health-dinner-img-display').hide();
+            $('#health-bedtime-snacks-img-display').hide();
             $('#health-breakfast-img').on('change', function() {
                 let reader = new FileReader();
                 reader.onload = (e) => {
                     $('#health-breakfast-img-display').prop('src', e.target.result);
-                    $('#health-breakfast-img-display').prop('display', 'block');
+                    $('#health-breakfast-img-display').show();
                 }
                 reader.readAsDataURL(this.files[0]);
             })
@@ -173,7 +173,7 @@
                 let reader = new FileReader();
                 reader.onload = (e) => {
                     $('#health-lunch-img-display').prop('src', e.target.result);
-                    $('#health-lunch-img-display').prop('display', 'block');
+                    $('#health-lunch-img-display').show();
                 }
                 reader.readAsDataURL(this.files[0]);
             })
@@ -181,7 +181,7 @@
                 let reader = new FileReader();
                 reader.onload = (e) => {
                     $('#health-dinner-img-display').prop('src', e.target.result);
-                    $('#health-dinner-img-display').prop('display', 'block');
+                    $('#health-dinner-img-display').show();
                 }
                 reader.readAsDataURL(this.files[0]);
             })
@@ -189,7 +189,7 @@
                 let reader = new FileReader();
                 reader.onload = (e) => {
                     $('#health-bedtime-snacks-img-display').prop('src', e.target.result);
-                    $('#health-bedtime-snacks-img-display').prop('display', 'block');
+                    $('#health-bedtime-snacks-img-display').show();
                 }
                 reader.readAsDataURL(this.files[0]);
             })

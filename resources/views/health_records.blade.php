@@ -217,7 +217,7 @@
                                 <div class='table_cell'>
                                     <a href="{{ asset('uploads/' . $item['health-breakfast-img']) }}" data-fancybox>
                                         <img src="{{ asset('uploads/' . $item['health-breakfast-img']) }}"
-                                        class="img-fluid" style="width: 200px !important;" alt="">
+                                        class="img-fluid img-thumbnail" style="width: 200px !important;" alt="">
                                     </a>
 
                                 </div>
@@ -231,7 +231,7 @@
                                 <div class='table_cell'>
                                     <a href="{{ asset('uploads/' . $item['health-lunch-img']) }}" data-fancybox>
                                         <img src="{{ asset('uploads/' . $item['health-lunch-img']) }}"
-                                        class="img-fluid" style="width: 200px;" alt="">
+                                        class="img-fluid img-thumbnail" style="width: 200px;" alt="">
                                     </a>
 
                                 </div>
@@ -245,7 +245,7 @@
                                 <div class='table_cell'>
                                     <a href="{{ asset('uploads/' . $item['health-dinner-img']) }}" data-fancybox>
                                         <img src="{{ asset('uploads/' . $item['health-dinner-img']) }}"
-                                        class="img-fluid" style="width: 200px;" alt="">
+                                        class="img-fluid img-thumbnail" style="width: 200px;" alt="">
                                     </a>
 
                                 </div>
@@ -259,7 +259,7 @@
                                 <div class='table_cell'>
                                     <a href="{{ asset('uploads/' . $item['health-bedtime-snacks-img']) }}" data-fancybox>
                                         <img src="{{ asset('uploads/' . $item['health-bedtime-snacks-img']) }}"
-                                        class="img-fluid" style="width: 200px;" alt="">
+                                        class="img-fluid img-thumbnail" style="width: 200px;" alt="">
                                     </a>
 
                                 </div>

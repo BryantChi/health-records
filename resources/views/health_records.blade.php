@@ -60,7 +60,8 @@
         .table_row>.table_small>.table_cell:nth-child(odd) {
             display: none;
             background: #bdbdbd;
-            color: #e5e5e5;
+            /* color: #e5e5e5; */
+            color: #474747;
             padding-top: 10px;
             padding-bottom: 10px;
         }

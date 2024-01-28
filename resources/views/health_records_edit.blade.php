@@ -54,7 +54,7 @@
                                     id="health-breakfast-img" accept="image/*">
                                 <label class="input-group-text" for="health-breakfast-img">Upload</label>
                             </div>
-                            <img src="{{ 'uploads/' . $healthRecordsInfo['health-breakfast-img']}}" id="health-breakfast-img-display" class="img-thumbnail" width="300" alt="">
+                            <img src="{{ url('uploads/' . $healthRecordsInfo['health-breakfast-img']) }}" id="health-breakfast-img-display" class="img-thumbnail" width="300" alt="">
                         </div>
                         <div class="mb-3">
                             <label for="health-lunch" class="form-label"><span class="text-danger">*</span>午餐</label>
@@ -65,7 +65,7 @@
                                     accept="image/*">
                                 <label class="input-group-text" for="health-lunch-img">Upload</label>
                             </div>
-                            <img src="{{ 'uploads/' . $healthRecordsInfo['health-lunch-img']}}" id="health-lunch-img-display" width="300" class="img-thumbnail" alt="">
+                            <img src="{{ url('uploads/' . $healthRecordsInfo['health-lunch-img']) }}" id="health-lunch-img-display" width="300" class="img-thumbnail" alt="">
                         </div>
                         <div class="mb-3">
                             <label for="health-dinner" class="form-label"><span class="text-danger">*</span>晚餐</label>
@@ -76,7 +76,7 @@
                                     accept="image/*">
                                 <label class="input-group-text" for="health-dinner-img">Upload</label>
                             </div>
-                            <img src="{{ 'uploads/' . $healthRecordsInfo['health-dinner-img']}}" id="health-dinner-img-display" width="300" class="img-thumbnail" alt="">
+                            <img src="{{ url('uploads/' . $healthRecordsInfo['health-dinner-img']) }}" id="health-dinner-img-display" width="300" class="img-thumbnail" alt="">
                         </div>
                         <div class="mb-3">
                             <label for="health-bedtime-snacks" class="form-label"><span
@@ -88,7 +88,7 @@
                                     accept="image/*">
                                 <label class="input-group-text" for="health-bedtime-snacks-img">Upload</label>
                             </div>
-                            <img src="{{ 'uploads/' . $healthRecordsInfo['health-bedtime-snacks-img']}}" id="health-bedtime-snacks-img-display" class="img-thumbnail" width="300" alt="">
+                            <img src="{{ url('uploads/' . $healthRecordsInfo['health-bedtime-snacks-img']) }}" id="health-bedtime-snacks-img-display" class="img-thumbnail" width="300" alt="">
                         </div>
                         <div class="mb-3">
                             <label for="health-snacks" class="form-label"><span class="text-danger">*</span>零食</label>

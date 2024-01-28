@@ -54,7 +54,7 @@ class HealthRecordsInfoController extends Controller
                 mkdir($path, 0755);
             }
             // 壓縮圖片
-            $image_breakfast = Image::make($image_breakfast)->resize(800, null, function ($constraint) {
+            $image_breakfast = Image::make($image_breakfast)->orientate()->resize(800, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
@@ -74,7 +74,7 @@ class HealthRecordsInfoController extends Controller
                 mkdir($path, 0755);
             }
             // 壓縮圖片
-            $image_lunch = Image::make($image_lunch)->resize(800, null, function ($constraint) {
+            $image_lunch = Image::make($image_lunch)->orientate()->resize(800, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
@@ -94,7 +94,7 @@ class HealthRecordsInfoController extends Controller
                 mkdir($path, 0755);
             }
             // 壓縮圖片
-            $image_dinner = Image::make($image_dinner)->resize(800, null, function ($constraint) {
+            $image_dinner = Image::make($image_dinner)->orientate()->resize(800, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
@@ -114,7 +114,7 @@ class HealthRecordsInfoController extends Controller
                 mkdir($path, 0755);
             }
             // 壓縮圖片
-            $image_bedtime_snacks = Image::make($image_bedtime_snacks)->resize(800, null, function ($constraint) {
+            $image_bedtime_snacks = Image::make($image_bedtime_snacks)->orientate()->resize(800, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質

@@ -13,10 +13,13 @@
         .health-table::-webkit-scrollbar {
             display: none;
         }
+        .table::-webkit-scrollbar {
+            display: none;
+        }
         .table {
             display: table;
             text-align: center;
-            width: 100%;
+            max-width: 100%;
             margin: 0% auto 0;
             border-collapse: separate;
             font-family: "Roboto", sans-serif;
@@ -184,23 +187,23 @@
 
                 <div class="table overflow-auto p-2 mb-5" id="results"  style="background: #ffffffcc">
                     <div class='theader'>
-                        <div class='table_header'>日期</div>
-                        <div class='table_header'>早餐</div>
-                        <div class='table_header'>早餐照</div>
-                        <div class='table_header'>午餐</div>
-                        <div class='table_header'>午餐照</div>
-                        <div class='table_header'>晚餐</div>
-                        <div class='table_header'>晚餐照</div>
-                        <div class='table_header'>宵夜</div>
-                        <div class='table_header'>宵夜照</div>
-                        <div class='table_header'>零食</div>
-                        <div class='table_header'>飲料</div>
-                        <div class='table_header'>喝水量</div>
-                        <div class='table_header'>有無運動</div>
-                        <div class='table_header'>排便次數</div>
-                        <div class='table_header'>起床時間</div>
-                        <div class='table_header'>睡眠時間</div>
-                        <div class='table_header'>心情分享</div>
+                        <div class='table_header px-1'>日期</div>
+                        <div class='table_header px-1'>早餐</div>
+                        <div class='table_header px-1'>早餐照</div>
+                        <div class='table_header px-1'>午餐</div>
+                        <div class='table_header px-1'>午餐照</div>
+                        <div class='table_header px-1'>晚餐</div>
+                        <div class='table_header px-1'>晚餐照</div>
+                        <div class='table_header px-1'>宵夜</div>
+                        <div class='table_header px-1'>宵夜照</div>
+                        <div class='table_header px-1'>零食</div>
+                        <div class='table_header px-1'>飲料</div>
+                        <div class='table_header px-1'>喝水量</div>
+                        <div class='table_header px-1'>有無運動</div>
+                        <div class='table_header px-1'>排便次數</div>
+                        <div class='table_header px-1'>起床時間</div>
+                        <div class='table_header px-1'>睡眠時間</div>
+                        <div class='table_header px-1'>心情分享</div>
                     </div>
                     @foreach ($healthRecordsInfo as $item)
                         <div class='table_row border rounded'>

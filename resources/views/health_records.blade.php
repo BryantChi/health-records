@@ -204,6 +204,7 @@
                         <div class='table_header px-1'>起床時間</div>
                         <div class='table_header px-1'>睡眠時間</div>
                         <div class='table_header px-1'>心情分享</div>
+                        <div class='table_header px-1'>操作</div>
                     </div>
                     @foreach ($healthRecordsInfo as $item)
                         <div class='table_row border rounded'>
@@ -298,6 +299,12 @@
                             <div class='table_small'>
                                 <div class='table_cell'>心情分享</div>
                                 <div class='table_cell'>{{ $item['health-mood-sharing'] }}</div>
+                            </div>
+                            <div class='table_small'>
+                                <div class='table_cell'>操作</div>
+                                <div class='table_cell'>
+                                    <a href="{{ route('health-records.edit', $item['id']) }}" class="btn btn-outline-dark">編輯</a>
+                                </div>
                             </div>
                         </div>
                     @endforeach

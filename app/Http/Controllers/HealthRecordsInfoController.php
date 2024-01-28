@@ -48,13 +48,17 @@ class HealthRecordsInfoController extends Controller
         $image_breakfast = $request->file('health-breakfast-img');
 
         if ($image_breakfast) {
-            $filename = public_path('uploads/images/health-breakfast-img/'.$today) . '/' . time() . '_' . $image_breakfast->getClientOriginalName();
+            $path = public_path('uploads/images/health-breakfast-img/'.$today) . '/';
+            $filename = time() . '_' . $image_breakfast->getClientOriginalName();
+            if (!file_exists($path)) {
+                mkdir($path, 0755);
+            }
             // 壓縮圖片
             $image_breakfast = Image::make($image_breakfast)->resize(800, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
-            $image_breakfast->save($filename);
+            $image_breakfast->save($path.$filename);
 
             $input['health-breakfast-img'] = 'images/health-breakfast-img/'.$today . '/' . $filename;
         } else {
@@ -64,13 +68,17 @@ class HealthRecordsInfoController extends Controller
         $image_lunch = $request->file('health-lunch-img');
 
         if ($image_lunch) {
-            $filename = public_path('uploads/images/health-lunch-img/'.$today) . '/' . time() . '_' . $image_lunch->getClientOriginalName();
+            $path = public_path('uploads/images/health-lunch-img/'.$today) . '/';
+            $filename = time() . '_' . $image_lunch->getClientOriginalName();
+            if (!file_exists($path)) {
+                mkdir($path, 0755);
+            }
             // 壓縮圖片
             $image_lunch = Image::make($image_lunch)->resize(800, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
-            $image_lunch->save($filename);
+            $image_lunch->save($path.$filename);
 
             $input['health-lunch-img'] = 'images/health-lunch-img/'.$today . '/' . $filename;
         } else {
@@ -80,13 +88,17 @@ class HealthRecordsInfoController extends Controller
         $image_dinner = $request->file('health-dinner-img');
 
         if ($image_dinner) {
-            $filename = public_path('uploads/images/health-dinner-img/'.$today) . '/' . time() . '_' . $image_dinner->getClientOriginalName();
+            $path = public_path('uploads/images/health-dinner-img/'.$today) . '/';
+            $filename = time() . '_' . $image_dinner->getClientOriginalName();
+            if (!file_exists($path)) {
+                mkdir($path, 0755);
+            }
             // 壓縮圖片
             $image_dinner = Image::make($image_dinner)->resize(800, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
-            $image_dinner->save($filename);
+            $image_dinner->save($path.$filename);
 
             $input['health-dinner-img'] = 'images/health-dinner-img/'.$today . '/' . $filename;
         } else {
@@ -96,13 +108,17 @@ class HealthRecordsInfoController extends Controller
         $image_bedtime_snacks = $request->file('health-bedtime-snacks-img');
 
         if ($image_bedtime_snacks) {
-            $filename = public_path('uploads/images/health-bedtime-snacks-img/'.$today) . '/' . time() . '_' . $image_bedtime_snacks->getClientOriginalName();
+            $path = public_path('uploads/images/health-bedtime-snacks-img/'.$today) . '/';
+            $filename = time() . '_' . $image_bedtime_snacks->getClientOriginalName();
+            if (!file_exists($path)) {
+                mkdir($path, 0755);
+            }
             // 壓縮圖片
             $image_bedtime_snacks = Image::make($image_bedtime_snacks)->resize(800, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
-            $image_bedtime_snacks->save($filename);
+            $image_bedtime_snacks->save($path.$filename);
 
             $input['health-bedtime-snacks-img'] = 'images/health-bedtime-snacks-img/'.$today . '/' . $filename;
         } else {

@@ -293,7 +293,7 @@
                                 <div class='table_cell'>{{ $item['health-sleep-time'] }}</div>
                             </div>
                             <div class='table_small'>
-                                <div class='table_cell'>睡眠時間</div>
+                                <div class='table_cell'>心情分享</div>
                                 <div class='table_cell'>{{ $item['health-mood-sharing'] }}</div>
                             </div>
                         </div>

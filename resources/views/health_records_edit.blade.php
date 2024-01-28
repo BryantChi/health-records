@@ -157,11 +157,6 @@
 
     <script>
         $(function() {
-            // $('#health-date').val('');
-            // $('#health-breakfast-img-display').hide();
-            // $('#health-lunch-img-display').hide();
-            // $('#health-dinner-img-display').hide();
-            // $('#health-bedtime-snacks-img-display').hide();
             $('#health-breakfast-img').on('change', function() {
                 let reader = new FileReader();
                 reader.onload = (e) => {

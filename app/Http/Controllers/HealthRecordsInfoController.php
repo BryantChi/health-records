@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateHealthRecordsInfoRequest;
 use App\Models\HealthRecordsInfo;
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
+// use Intervention\Image\Image;
 
 class HealthRecordsInfoController extends Controller
 {
@@ -53,7 +54,7 @@ class HealthRecordsInfoController extends Controller
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
-            $image_breakfast->save(public_path('uploads/images/health-breakfast-img/'.$today), $filename);
+            $image_breakfast->save(public_path('uploads/images/health-breakfast-img/'.$today . '/' . $filename));
 
             $input['health-breakfast-img'] = 'images/health-breakfast-img/'.$today . '/' . $filename;
         } else {
@@ -69,7 +70,7 @@ class HealthRecordsInfoController extends Controller
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
-            $image_lunch->save(public_path('uploads/images/health-lunch-img/'.$today), $filename);
+            $image_lunch->save(public_path('uploads/images/health-lunch-img/'.$today . '/' . $filename));
 
             $input['health-lunch-img'] = 'images/health-lunch-img/'.$today . '/' . $filename;
         } else {
@@ -85,7 +86,7 @@ class HealthRecordsInfoController extends Controller
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
-            $image_dinner->save(public_path('uploads/images/health-dinner-img/'.$today), $filename);
+            $image_dinner->save(public_path('uploads/images/health-dinner-img/'.$today . '/' . $filename));
 
             $input['health-dinner-img'] = 'images/health-dinner-img/'.$today . '/' . $filename;
         } else {
@@ -101,7 +102,7 @@ class HealthRecordsInfoController extends Controller
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
-            $image_bedtime_snacks->save(public_path('uploads/images/health-bedtime-snacks-img/'.$today), $filename);
+            $image_bedtime_snacks->save(public_path('uploads/images/health-bedtime-snacks-img/'.$today . '/' . $filename));
 
             $input['health-bedtime-snacks-img'] = 'images/health-bedtime-snacks-img/'.$today . '/' . $filename;
         } else {

@@ -48,13 +48,13 @@ class HealthRecordsInfoController extends Controller
         $image_breakfast = $request->file('health-breakfast-img');
 
         if ($image_breakfast) {
-            $filename = time() . '_' . $image_breakfast->getClientOriginalName();
+            $filename = public_path('uploads/images/health-breakfast-img/'.$today) . '/' . time() . '_' . $image_breakfast->getClientOriginalName();
             // 壓縮圖片
             $image_breakfast = Image::make($image_breakfast)->resize(800, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
-            $image_breakfast->save(public_path('uploads/images/health-breakfast-img/'.$today) . '/' . $filename);
+            $image_breakfast->save($filename);
 
             $input['health-breakfast-img'] = 'images/health-breakfast-img/'.$today . '/' . $filename;
         } else {
@@ -64,13 +64,13 @@ class HealthRecordsInfoController extends Controller
         $image_lunch = $request->file('health-lunch-img');
 
         if ($image_lunch) {
-            $filename = time() . '_' . $image_lunch->getClientOriginalName();
+            $filename = public_path('uploads/images/health-lunch-img/'.$today) . '/' . time() . '_' . $image_lunch->getClientOriginalName();
             // 壓縮圖片
             $image_lunch = Image::make($image_lunch)->resize(800, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
-            $image_lunch->save(public_path('uploads/images/health-lunch-img/'.$today) . '/' . $filename);
+            $image_lunch->save($filename);
 
             $input['health-lunch-img'] = 'images/health-lunch-img/'.$today . '/' . $filename;
         } else {
@@ -80,13 +80,13 @@ class HealthRecordsInfoController extends Controller
         $image_dinner = $request->file('health-dinner-img');
 
         if ($image_dinner) {
-            $filename = time() . '_' . $image_dinner->getClientOriginalName();
+            $filename = public_path('uploads/images/health-dinner-img/'.$today) . '/' . time() . '_' . $image_dinner->getClientOriginalName();
             // 壓縮圖片
             $image_dinner = Image::make($image_dinner)->resize(800, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
-            $image_dinner->save(public_path('uploads/images/health-dinner-img/'.$today) . '/' . $filename);
+            $image_dinner->save($filename);
 
             $input['health-dinner-img'] = 'images/health-dinner-img/'.$today . '/' . $filename;
         } else {
@@ -96,13 +96,13 @@ class HealthRecordsInfoController extends Controller
         $image_bedtime_snacks = $request->file('health-bedtime-snacks-img');
 
         if ($image_bedtime_snacks) {
-            $filename = time() . '_' . $image_bedtime_snacks->getClientOriginalName();
+            $filename = public_path('uploads/images/health-bedtime-snacks-img/'.$today) . '/' . time() . '_' . $image_bedtime_snacks->getClientOriginalName();
             // 壓縮圖片
             $image_bedtime_snacks = Image::make($image_bedtime_snacks)->resize(800, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             })->encode('jpg', 75); // 設定 JPG 格式和 75% 品質
-            $image_bedtime_snacks->save(public_path('uploads/images/health-bedtime-snacks-img/'.$today) . '/' . $filename);
+            $image_bedtime_snacks->save($filename);
 
             $input['health-bedtime-snacks-img'] = 'images/health-bedtime-snacks-img/'.$today . '/' . $filename;
         } else {

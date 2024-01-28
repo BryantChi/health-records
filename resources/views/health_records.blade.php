@@ -4,7 +4,7 @@
     <style>
         .health-table {
             border: 1px solid #ccc;
-            border-radius: 15px;
+            border-radius: 15px !important;
             box-shadow: 0 0 30px #838383c6;
             background: #ffffffcc;
             height: 80vh;
@@ -126,7 +126,7 @@
                 display: table;
                 width: 100%;
                 border-collapse: separate;
-                padding-bottom: 20px;
+                /* padding-bottom: 20px; */
                 margin: 5% auto 0;
                 text-align: center;
             }
@@ -203,7 +203,7 @@
                         <div class='table_header'>心情分享</div>
                     </div>
                     @foreach ($healthRecordsInfo as $item)
-                        <div class='table_row'>
+                        <div class='table_row border rounded'>
                             <div class='table_small'>
                                 <div class='table_cell'>日期</div>
                                 <div class='table_cell'>{{ $item['health-date'] }}</div>

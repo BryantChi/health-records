@@ -52,7 +52,7 @@ class HealthRecordsInfoController extends Controller
             $path = public_path('uploads/images/health-breakfast-img/'.$today) . '/';
             $filename = time() . '_' . $image_breakfast->getClientOriginalName();
             if (!file_exists($path)) {
-                mkdir($path, 0755);
+                mkdir($path, 0755, true);
             }
             // 壓縮圖片
             $image_breakfast = Image::make($image_breakfast)->orientate()->resize(800, null, function ($constraint) {
@@ -72,7 +72,7 @@ class HealthRecordsInfoController extends Controller
             $path = public_path('uploads/images/health-lunch-img/'.$today) . '/';
             $filename = time() . '_' . $image_lunch->getClientOriginalName();
             if (!file_exists($path)) {
-                mkdir($path, 0755);
+                mkdir($path, 0755, true);
             }
             // 壓縮圖片
             $image_lunch = Image::make($image_lunch)->orientate()->resize(800, null, function ($constraint) {
@@ -92,7 +92,7 @@ class HealthRecordsInfoController extends Controller
             $path = public_path('uploads/images/health-dinner-img/'.$today) . '/';
             $filename = time() . '_' . $image_dinner->getClientOriginalName();
             if (!file_exists($path)) {
-                mkdir($path, 0755);
+                mkdir($path, 0755, true);
             }
             // 壓縮圖片
             $image_dinner = Image::make($image_dinner)->orientate()->resize(800, null, function ($constraint) {
@@ -112,7 +112,7 @@ class HealthRecordsInfoController extends Controller
             $path = public_path('uploads/images/health-bedtime-snacks-img/'.$today) . '/';
             $filename = time() . '_' . $image_bedtime_snacks->getClientOriginalName();
             if (!file_exists($path)) {
-                mkdir($path, 0755);
+                mkdir($path, 0755, true);
             }
             // 壓縮圖片
             $image_bedtime_snacks = Image::make($image_bedtime_snacks)->orientate()->resize(800, null, function ($constraint) {
@@ -175,7 +175,7 @@ class HealthRecordsInfoController extends Controller
             $path = public_path('uploads/images/health-breakfast-img/'.$healthRecordsInfo['health-date']) . '/';
             $filename = time() . '_' . $image_breakfast->getClientOriginalName();
             if (!file_exists($path)) {
-                mkdir($path, 0755);
+                mkdir($path, 0755, true);
             }
 
             if ($healthRecordsInfo['health-breakfast-img'] != null) {
@@ -204,7 +204,7 @@ class HealthRecordsInfoController extends Controller
             $path = public_path('uploads/images/health-lunch-img/'.$healthRecordsInfo['health-date']) . '/';
             $filename = time() . '_' . $image_lunch->getClientOriginalName();
             if (!file_exists($path)) {
-                mkdir($path, 0755);
+                mkdir($path, 0755, true);
             }
 
             if ($healthRecordsInfo['health-lunch-img'] != null) {
@@ -231,7 +231,7 @@ class HealthRecordsInfoController extends Controller
             $path = public_path('uploads/images/health-dinner-img/'.$healthRecordsInfo['health-date']) . '/';
             $filename = time() . '_' . $image_dinner->getClientOriginalName();
             if (!file_exists($path)) {
-                mkdir($path, 0755);
+                mkdir($path, 0755, true);
             }
             if ($healthRecordsInfo['health-dinner-img'] != null) {
                 // 若已存在，則覆蓋原有圖片
@@ -257,7 +257,7 @@ class HealthRecordsInfoController extends Controller
             $path = public_path('uploads/images/health-bedtime-snacks-img/'.$healthRecordsInfo['health-date']) . '/';
             $filename = time() . '_' . $image_bedtime_snacks->getClientOriginalName();
             if (!file_exists($path)) {
-                mkdir($path, 0755);
+                mkdir($path, 0755, true);
             }
             if ($healthRecordsInfo['health-bedtime-snacks-img'] != null) {
                 // 若已存在，則覆蓋原有圖片

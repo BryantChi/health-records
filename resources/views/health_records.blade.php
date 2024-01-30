@@ -74,6 +74,7 @@
             padding-bottom: 3px;
             color: #5b5b5b;
             /* border-bottom: #ccc 1px solid; */
+            word-break: keep-all !important;
         }
 
         .table_row>.table_small:first-child>.table_cell {
@@ -176,8 +177,8 @@
 @endpush
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center align-content-center">
+    <div class="container-fluid px-md-5">
+        <div class="row justify-content-center align-content-center mx-md-3">
             <div class="col-md-12 col-11 rounded health-table position-relative">
                 <div class="d-flex justify-content-between align-items-center p-3 fixed">
                     <h1>Reports</h1>
@@ -185,7 +186,7 @@
                     <a href="{{ route('index') }}" class="btn btn-outline-dark">開始紀錄</a>
                 </div>
 
-                <div class="table overflow-auto p-2 mb-5" id="results"  style="background: #ffffffcc">
+                <div class="table overflow-auto p-2 mb-5 rounded" id="results"  style="background: #ffffffcc">
                     <div class='theader'>
                         <div class='table_header px-1'>日期</div>
                         <div class='table_header px-1'>早餐</div>

@@ -121,7 +121,7 @@
                         <div class="mb-3">
                             <label for="health-getup-time" class="form-label"><span
                                     class="text-danger">*</span>起床時間</label>
-                            <input type="time" class="form-control" name="health-getup-time" id="health-get-up-time"
+                            <input type="time" class="form-control" name="health-getup-time" id="health-getup-time"
                                 placeholder="起床時間" required>
                         </div>
                         <div class="mb-3">
@@ -157,6 +157,8 @@
     <script>
         $(function() {
             $('#health-date').val('{{ \Carbon\Carbon::now()->format('Y-m-d') }}');
+            $('#health-getup-time').val('{{ \Carbon\Carbon::parse('07:30:00')->format('H:i') }}');
+            $('#health-sleep-time').val('{{ \Carbon\Carbon::parse('01:30:00')->format('H:i') }}');
             $('#health-breakfast-img-display').hide();
             $('#health-lunch-img-display').hide();
             $('#health-dinner-img-display').hide();
